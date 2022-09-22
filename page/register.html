@@ -64,55 +64,55 @@
 <!-- //main -->
 <script>
 
-   const name = document.getElementById('name');
-   const username = document.getElementById('username');
-   const email = document.getElementById('email');
-   const password = document.getElementById('password');
-   const confirmPassword = document.getElementById('confirm_password');
-//   let listUsers;
-//    let id;
-// function register() {
-//
-//     if (listUsers === null) {
-//         listUsers = []
-//         id = 1;
-//     } else {
-//         listUsers = JSON.parse(window.localStorage.getItem('list_user'));
-//         id = listUsers[listUsers.length].id + 1;
-//
-//     }
-//     let user = new Users(id,name,username,email,password);
-//     listUsers.push(user);
-//     window.localStorage.setItem('list_user', JSON.stringify(listUsers));
-// }
-   //lấy dữ liệu User
-   if (!getFromStorage('list_user')){
-       //gắn dữ liệu
-       saveToStorage('list_user',[])
-   }
-
-
-   const listUsers = getFromStorage("list_user");
-   const user = {
-       name: name.value
-       username: username.value
-       email: email.value
-       password: password.value
-   }
-
-   // Hàm lưu dữ liệu
-   function saveToStorage(key, value) {
-       localStorage.setItem(key, JSON.stringify(value));
-   }
-
-   // Hàm lấy dữ liệu
-   function getFromStorage(key) {
-       return JSON.parse(localStorage.getItem(key));
-   }
+   const name = document.getElementById('name').value;
+   const username = document.getElementById('username').value;
+   const email = document.getElementById('email').value;
+   const password = document.getElementById('password').value;
+   const confirmPassword = document.getElementById('confirm_password').value;
+  let listUsers;
+   let id;
 function register() {
 
+    if (listUsers === null) {
+        listUsers = []
+        id = 1;
+    } else {
+        listUsers = JSON.parse(window.localStorage.getItem('list_user'));
+        id = listUsers[listUsers.length].id + 1;
+
+    }
+    let user = new Users(id,name,username,email,password);
     listUsers.push(user);
+    window.localStorage.setItem('list_user', JSON.stringify(listUsers));
 }
+//    //lấy dữ liệu User
+//    if (!getFromStorage('list_user')){
+//        //gắn dữ liệu
+//        saveToStorage('list_user',[])
+//    }
+//
+//
+//    const listUsers = getFromStorage("list_user");
+//    const user = {
+//        name: name.value
+//        username: username.value
+//        email: email.value
+//        password: password.value
+//    }
+//
+//    // Hàm lưu dữ liệu
+//    function saveToStorage(key, value) {
+//        localStorage.setItem(key, JSON.stringify(value));
+//    }
+//
+//    // Hàm lấy dữ liệu
+//    function getFromStorage(key) {
+//        return JSON.parse(localStorage.getItem(key));
+//    }
+// function register() {
+//
+//     listUsers.push(user);
+// }
 
 </script>
 </body>
